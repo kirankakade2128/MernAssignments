@@ -1,0 +1,51 @@
+<!--Animated Progress Bar-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Progress Bar</title>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #aa678f;
+    font-family: Arial;
+  }
+
+  .progress-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 30px;
+    width: 0;
+    background-color: #137321;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    animation: fillBar 2s forwards;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+    to { width: 89%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-container">
+  <div class="progress-bar">89%</div>
+</div>
+
+</body>
+</html>

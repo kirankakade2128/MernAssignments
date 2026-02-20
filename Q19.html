@@ -1,0 +1,47 @@
+<!--Typing Animation-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typing Animation</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Times New Roman';
+    background: lightyellow;
+    margin: 0;
+  }
+
+  .typing {
+    font-size: 28px;
+    border-right: 2px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<div class="typing" id="text"></div>
+
+<script>
+  const text = "Hello! Welcome to the typing animation demo.";
+  const textElement = document.getElementById("text");
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      textElement.textContent += text[index];
+      index++;
+      setTimeout(type, 100); 
+    }
+  }
+
+  window.onload = type;
+</script>
+
+</body>
+</html>

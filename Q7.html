@@ -1,0 +1,77 @@
+<!--Collapsible Menu-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Collapsible Menu</title>
+
+<style>
+  body {
+    font-family: Arial;
+    background: #638f87;
+    padding: 40px;
+  }
+
+  .menu-container {
+    width: 300px;
+    margin: auto;
+  }
+
+  .menu-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #5e2913;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .menu-content {
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 15px;
+  }
+
+  .menu-content a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .menu-content a:hover {
+    color: #3f8fc4;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+  <button class="menu-btn" onclick="toggleMenu()">Toggle Menu</button>
+
+  <div id="menu" class="menu-content">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>

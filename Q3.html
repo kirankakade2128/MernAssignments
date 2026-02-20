@@ -1,0 +1,43 @@
+<!--Animated Button-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Button</title>
+
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    margin: 0;
+    font-family:  'Times New Roman';
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: darkgreen;  
+    transform: scale(1.5);      
+  }
+</style>
+</head>
+
+<body>
+
+<button class="btn"> Click Me </button>
+
+</body>
+</html>

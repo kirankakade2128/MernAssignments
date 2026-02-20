@@ -1,0 +1,126 @@
+<!--Responsive Navbar with Scroll-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Navbar with Scroll</title>
+<style>
+  body {
+    margin: 0;
+    font-family:  sans-serif;
+    height: 2000px; 
+  }
+
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .navbar-links {
+    display: flex;
+  }
+
+  nav.scrolled {
+    background-color: #433d60;
+  }
+
+  /* Mobile Menu */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #3498db;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    .navbar-links a {
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .navbar-links.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">MyLogo</div>
+  <div class="menu-toggle" onclick="toggleMenu(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="navbar-links" id="navbar-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  function toggleMenu(menu) {
+    const links = document.getElementById('navbar-links');
+    links.classList.toggle('active');
+    menu.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
